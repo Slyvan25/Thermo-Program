@@ -1,0 +1,65 @@
+@import "../fonts/ubuntu.css";
+body
+{
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    overflow: hidden;
+}
+
+dashboard
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "weather weather time " "left temp right" "iconbar iconbar iconbar";  
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to bottom right, #36d0dc, #5987e5)
+}
+
+.temprature
+{
+    grid-area: temp;
+}
+
+.iconbar
+{
+    grid-area: iconbar;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.icon-container
+{
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    height: 2em;
+    margin-bottom: 2em;
+    justify-content: center;
+}
+
+.icon-container a
+{
+    margin: 0 4vw;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.iconbar a:focus
+{
+    outline: none;
+    font-size: 2.2rem;
+    margin: 0 3.8vw;
+    transition: font-size .5s;
+}
+
+#clock
+{
+    grid-area: time;
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 2em;
+    margin: 0.3em;
+    color: #fff;
+}

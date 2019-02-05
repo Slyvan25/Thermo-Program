@@ -1,0 +1,47 @@
+<dashboard>
+    <div id="clock" class="animated bounceInRight">
+    </div>
+
+    <div class="temprature">
+        <svg version="1.1" viewBox="0 0 500 500" class="animated bounceIn">
+            <circle cx="250" cy="250" r="240" stroke="white" stroke-width="3" fill="transparent"></circle>
+            <circle cx="250" cy="250" r="200" stroke="white" stroke-width="3" fill="transparent"></circle>
+            <circle cx="250" cy="250" r="155" stroke="white" stroke-width="3" fill="white"></circle>
+            <text x="165" y="300" fill="#36d0dc" style="font-size: 10em;" id="temprature"></text>
+            <circle cx="330" cy="175" r="5" stroke="#36d0dc" stroke-width="2" fill="transparent"></circle>
+        </svg>
+    </div>
+
+
+    <div class="iconbar animated bounceInUp">
+        <div class="icon-container">
+                <a class="animated zoomInUp" href=""><i class="fas fa-sliders-h"></i></a>
+                <a class="animated zoomInUp"><i class="far fa-calendar-alt"></i></a>        
+        </div>
+    </div>
+</dashboard>
+
+<script>
+
+    function clocktime()
+    {
+        let date = new Date();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        if(minutes < 10)
+        {
+            document.getElementById("clock").innerHTML = hours + ":0" + minutes;
+        }
+        else
+        {
+            document.getElementById("clock").innerHTML = hours + ":" + minutes;
+        }
+    }
+    setInterval(clocktime, 500);
+
+    function refreshWeather()
+    {
+        console.debug("weather statistics refreshed");
+    }
+    setInterval(refreshWeather, 86400000);
+</script>
